@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career - Rekrutmen Guru</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="career-header">
+        <h1>Rekrutmen Guru SMK ABC</h1>
+        <p>Bergabunglah dengan kami untuk menciptakan generasi masa depan yang lebih baik.</p>
+    </header>
+
+    <main>
+        <section class="career-section">
+            <h2>Posisi yang Dibuka</h2>
+            <ul>
+                <li>Guru Matematika</li>
+                <li>Guru Bahasa Inggris</li>
+                <li>Guru Rekayasa Perangkat Lunak</li>
+                <li>Guru Biologi</li>
+                <li>Guru Bahasa Indonesia</li>
+                <li>Staff TU</li>
+            </ul>
+        </section>
+
+        <section class="career-section">
+            <h2>Persyaratan</h2>
+            <ul>
+                <li>Pendidikan minimal S1 atau D4 sesuai dengan jurusan yang dibutuhkan</li>
+                <li>Memiliki pengalaman mengajar minimal 1 tahun</li>
+                <li>Berkomitmen untuk mendidik siswa dengan baik</li>
+                <li>Memiliki sertifikat pendidik</li>
+                <li>Sehat jasmani dan rohani</li>
+                <li>Menguasai teknologi sesuai bidangnya dan familiar dengan Microsoft Office</li>
+            </ul>
+        </section>
+
+        <section class="career-section">
+            <h2>Dokumen yang Diperlukan untuk Mendaftar</h2>
+            <p>Untuk melamar sebagai guru di SMK ABC, Anda perlu mengunggah dan mengirimkan dokumen berikut:</p>
+            <ul>
+                <li>Surat lamaran kerja</li>
+                <li>Curriculum vitae (CV)</li>
+                <li>Fotokopi ijazah (dilegalisir)</li>
+                <li>Fotokopi transkrip nilai (dilegalisir)</li>
+                <li>Pas foto terbaru</li>
+                <li>Sertifikat kompetensi (jika ada)</li>
+                <li>Fotokopi Kartu AK1 dari Dinas Ketenagakerjaan setempat (dilegalisir)</li>
+            </ul>
+        </section>
+
+        <section class="career-section">
+            <h2>Cara Melamar</h2>
+            <p>Kirimkan CV dan surat lamaran dalam bentuk PDF melalui formulir di bawah ini:</p>
+            <form action="process_application.php" method="POST" enctype="multipart/form-data" class="apply-form">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap:</label>
+                    <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Nomor Telepon:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Masukkan nomor telepon Anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="position">Posisi yang Dilamar:</label>
+                    <select id="position" name="position" required>
+                        <option value="Guru Matematika">Guru Matematika</option>
+                        <option value="Guru Bahasa Inggris">Guru Bahasa Inggris</option>
+                        <option value="Guru Rekayasa Perangkat Lunak">Guru Rekayasa Perangkat Lunak</option>
+                        <option value="Guru Biologi">Guru Biologi</option>
+                        <option value="Guru Bahasa Indonesia">Guru Bahasa Indonesia</option>
+                        <option value="Staff TU">Staff TU</option>
+                    </select>
+                </div>
+
+                <!-- Bagian Unggah CV --> 
+                <div class="form-group">
+                    <label for="cv">Unggah CV (pdf, doc, docx):</label>
+                    <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+                </div>
+
+                <button type="submit" class="apply-btn">Kirim Lamaran</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
