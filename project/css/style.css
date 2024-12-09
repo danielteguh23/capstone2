@@ -602,17 +602,11 @@ body {
 
 
 .ekstrakulikuler {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .ekstrakulikuler .perEkstrakulikuler {
@@ -622,8 +616,19 @@ body {
   margin: 20px 10px;
   overflow: hidden;
   border-radius: 20px;
-  -webkit-box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+.ekstrakulikuler .perEkstrakulikuler img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Membuat gambar menyesuaikan ukuran box */
+  border-radius: 20px;
+  transition: transform 0.5s ease-in-out; /* Menambahkan animasi saat hover */
+}
+
+.ekstrakulikuler .perEkstrakulikuler:hover img {
+  transform: scale(1.1); /* Gambar sedikit diperbesar saat hover */
 }
 
 .ekstrakulikuler .perEkstrakulikuler p {
@@ -632,45 +637,18 @@ body {
   position: absolute;
   bottom: -17px;
   left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   background-color: #0069D9;
   color: #fff;
   border-radius: 20px;
-  -webkit-transform: translateY(50px);
-          transform: translateY(50px);
-}
-
-.ekstrakulikuler .perEkstrakulikuler::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-image: url("../images/4.jpeg");
-  background-size: cover;
-  background-position: top center;
-  width: 100%;
-  height: 100%;
-}
-
-.ekstrakulikuler .perEkstrakulikuler:hover::before {
-  opacity: .7;
+  transform: translateY(50px);
+  transition: transform 0.5s ease;
 }
 
 .ekstrakulikuler .perEkstrakulikuler:hover p {
-  -webkit-transition: .5s;
-  transition: .5s;
-  -webkit-transform: translateY(0px);
-          transform: translateY(0px);
+  transform: translateY(0px);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -681,10 +659,11 @@ body {
   height: 70vh;
   background-image: url("../images/basket.jpg");
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center;
   background-size: cover;
   background-attachment: fixed;
 }
+
 
 .titleEkstrakulikuler {
   font-weight: 600;
@@ -1159,147 +1138,154 @@ iframe {
     font-size: .9em;
   }
 }
-/* Career Page Styles */
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* Header */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 0 15px;
+}
+
 header {
-    background: linear-gradient(to right, #007bff, #0056b3);
-    color: #fff;
-    padding: 50px 20px;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin: 0;
-}
-
-header p {
-    font-size: 1.2rem;
-    font-weight: 300;
-    margin-top: 10px;
-}
-
-/* Main Content */
-main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-main section {
-    margin-bottom: 30px;
-}
-
-main h2 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #007bff;
-    margin-bottom: 15px;
-}
-
-main ul {
-    list-style: none;
-    padding: 0;
-}
-
-main ul li {
-    position: relative;
-    font-size: 1rem;
-    margin-bottom: 10px;
-    padding-left: 25px;
-    color: #555;
-}
-
-main ul li::before {
-    content: "✔";
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #007bff;
-    font-size: 1.2rem;
-}
-
-/* Email Section */
-main section p {
-    font-size: 1rem;
-    color: #333;
-    margin: 5px 0;
-}
-
-main section strong {
-    color: #007bff;
-    font-weight: 700;
-}
-/* Form Apply Styles */
-.apply-form {
-    background-color: #fff;
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-}
-
-.apply-form .form-group {
-    margin-bottom: 15px;
-}
-
-.apply-form label {
-    display: block;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.apply-form input,
-.apply-form select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    color: #555;
-}
-
-.apply-form input[type="file"] {
-    padding: 5px;
-}
-
-.apply-form button {
-    display: block;
-    width: 100%;
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.apply-form button:hover {
-    background-color: #0056b3;
-}
-
-.timer {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #d9534f;
   text-align: center;
+  background: linear-gradient(to right, #0069D9, #007bff);
+  color: white;
+  padding: 30px 20px;
+  border-radius: 8px;
   margin-bottom: 20px;
 }
 
-button {
-  margin-top: 20px;
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
+
+header p {
+  font-size: 1.2rem;
+}
+
+.career-section {
+  background: white;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.career-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #0069D9;
+  text-align: center;
+  position: relative;
+}
+
+.career-section h2::after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  background: #0069D9;
+  display: block;
+  margin: 10px auto;
+}
+
+.career-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.career-section ul li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.career-section p {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+form label {
+  font-weight: bold;
+  color: #0069D9;
+}
+
+form input, form select, form button {
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+form input:focus, form select:focus {
+  border-color: #0069D9;
+  box-shadow: 0 0 5px rgba(0, 105, 217, 0.3);
+}
+
+form button {
+  background: #0069D9;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #0056b3;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  header h1 {
+      font-size: 2rem;
+  }
+
+  header p {
+      font-size: 1rem;
+  }
+
+  .career-section h2 {
+      font-size: 1.5rem;
+  }
+
+  form {
+      padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  form input, form select, form button {
+      font-size: 0.9rem;
+      padding: 8px;
+  }
+}
+
+
 
 /*# sourceMappingURL=style.css.map */
